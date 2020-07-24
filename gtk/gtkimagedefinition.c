@@ -26,26 +26,26 @@ typedef struct _GtkImageDefinitionPaintable GtkImageDefinitionPaintable;
 
 struct _GtkImageDefinitionEmpty {
   GtkImageType type;
-  gint ref_count;
+  int ref_count;
 };
 
 struct _GtkImageDefinitionIconName {
   GtkImageType type;
-  gint ref_count;
+  int ref_count;
 
   char *icon_name;
 };
 
 struct _GtkImageDefinitionGIcon {
   GtkImageType type;
-  gint ref_count;
+  int ref_count;
 
   GIcon *gicon;
 };
 
 struct _GtkImageDefinitionPaintable {
   GtkImageType type;
-  gint ref_count;
+  int ref_count;
 
   GdkPaintable *paintable;
 };

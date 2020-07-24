@@ -20,7 +20,7 @@ fill_store (GtkListStore *store)
 {
   GtkTreeIter iter;
   const gchar *text[] = { "Red", "Green", "Blue", "Yellow" };
-  gint i;
+  int i;
 
   /* First clear the store */
   gtk_list_store_clear (store);

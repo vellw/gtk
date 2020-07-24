@@ -94,7 +94,7 @@ gdk_device_pad_get_n_groups (GdkDevicePad *pad)
  **/
 gint
 gdk_device_pad_get_group_n_modes (GdkDevicePad *pad,
-                                  gint          group_idx)
+                                  int           group_idx)
 {
   GdkDevicePadInterface *iface = GDK_DEVICE_PAD_GET_IFACE (pad);
 
@@ -138,7 +138,7 @@ gdk_device_pad_get_n_features (GdkDevicePad        *pad,
 gint
 gdk_device_pad_get_feature_group (GdkDevicePad        *pad,
                                   GdkDevicePadFeature  feature,
-                                  gint                 idx)
+                                  int                  idx)
 {
   GdkDevicePadInterface *iface = GDK_DEVICE_PAD_GET_IFACE (pad);
 

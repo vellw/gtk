@@ -232,7 +232,7 @@ gtk_cell_accessible_action_get_n_actions (AtkAction *action)
 
 static const gchar *
 gtk_cell_accessible_action_get_name (AtkAction *action,
-                                     gint       index)
+                                     int        index)
 {
   switch (index)
     {
@@ -249,7 +249,7 @@ gtk_cell_accessible_action_get_name (AtkAction *action,
 
 static const gchar *
 gtk_cell_accessible_action_get_localized_name (AtkAction *action,
-                                               gint       index)
+                                               int        index)
 {
   switch (index)
     {
@@ -266,7 +266,7 @@ gtk_cell_accessible_action_get_localized_name (AtkAction *action,
 
 static const gchar *
 gtk_cell_accessible_action_get_description (AtkAction *action,
-                                            gint       index)
+                                            int        index)
 {
   switch (index)
     {
@@ -283,14 +283,14 @@ gtk_cell_accessible_action_get_description (AtkAction *action,
 
 static const gchar *
 gtk_cell_accessible_action_get_keybinding (AtkAction *action,
-                                           gint       index)
+                                           int        index)
 {
   return NULL;
 }
 
 static gboolean
 gtk_cell_accessible_action_do_action (AtkAction *action,
-                                      gint       index)
+                                      int        index)
 {
   GtkCellAccessible *cell = GTK_CELL_ACCESSIBLE (action);
   GtkCellAccessibleParent *parent;
@@ -331,10 +331,10 @@ atk_action_interface_init (AtkActionIface *iface)
 
 static void
 gtk_cell_accessible_get_extents (AtkComponent *component,
-                                 gint         *x,
-                                 gint         *y,
-                                 gint         *width,
-                                 gint         *height,
+                                 int          *x,
+                                 int          *y,
+                                 int          *width,
+                                 int          *height,
                                  AtkCoordType  coord_type)
 {
   GtkCellAccessible *cell;
@@ -388,8 +388,8 @@ gtk_cell_accessible_get_column_header_cells (AtkTableCell *table_cell)
 
 static gboolean
 gtk_cell_accessible_get_position (AtkTableCell *table_cell,
-                                  gint         *row,
-                                  gint         *column)
+                                  int          *row,
+                                  int          *column)
 {
   GtkCellAccessible *cell;
   AtkObject *parent;

@@ -182,7 +182,7 @@ match_func (GtkEntryCompletion *completion,
   return ret;
 }
 
-static gint timer_count = 0;
+static int timer_count = 0;
 
 static const char *dynamic_completions[] = {
   "GNOME",
@@ -214,8 +214,8 @@ static gint
 animation_timer (GtkEntryCompletion *completion)
 {
   GtkTreeIter iter;
-  gint n_completions = G_N_ELEMENTS (dynamic_completions);
-  gint n;
+  int n_completions = G_N_ELEMENTS (dynamic_completions);
+  int n;
   static GtkListStore *old_store = NULL;
   GtkListStore *store = GTK_LIST_STORE (gtk_entry_completion_get_model (completion));
 

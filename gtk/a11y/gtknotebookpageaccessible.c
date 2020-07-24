@@ -111,7 +111,7 @@ gtk_notebook_page_accessible_get_n_children (AtkObject *accessible)
 
 static AtkObject *
 gtk_notebook_page_accessible_ref_child (AtkObject *accessible,
-                                        gint       i)
+                                        int        i)
 {
   AtkObject *child_obj;
   GtkNotebookPageAccessible *page = NULL;
@@ -278,8 +278,8 @@ gtk_notebook_page_accessible_invalidate (GtkNotebookPageAccessible *page)
 
 static AtkObject*
 gtk_notebook_page_accessible_ref_accessible_at_point (AtkComponent *component,
-                                                      gint          x,
-                                                      gint          y,
+                                                      int           x,
+                                                      int           y,
                                                       AtkCoordType  coord_type)
 {
   /* There is only one child so we return it */
@@ -292,10 +292,10 @@ gtk_notebook_page_accessible_ref_accessible_at_point (AtkComponent *component,
 
 static void
 gtk_notebook_page_accessible_get_extents (AtkComponent *component,
-                                          gint         *x,
-                                          gint         *y,
-                                          gint         *width,
-                                          gint         *height,
+                                          int          *x,
+                                          int          *y,
+                                          int          *width,
+                                          int          *height,
                                           AtkCoordType  coord_type)
 {
   GtkWidget *label;

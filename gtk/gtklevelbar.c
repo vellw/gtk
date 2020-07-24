@@ -300,11 +300,11 @@ gtk_level_bar_get_num_block_nodes (GtkLevelBar *self)
 
 static void
 gtk_level_bar_get_min_block_size (GtkLevelBar *self,
-                                  gint        *block_width,
-                                  gint        *block_height)
+                                  int         *block_width,
+                                  int         *block_height)
 {
   guint i, n_blocks;
-  gint width, height;
+  int width, height;
 
   *block_width = *block_height = 0;
   n_blocks = gtk_level_bar_get_num_block_nodes (self);
@@ -359,7 +359,7 @@ gtk_level_bar_render_trough (GtkGizmo    *gizmo,
     }
   else
     {
-      gint num_blocks, i;
+      int num_blocks, i;
 
       num_blocks = gtk_level_bar_get_num_blocks (self);
 
@@ -379,8 +379,8 @@ gtk_level_bar_measure_trough (GtkGizmo       *gizmo,
 {
   GtkWidget *widget = GTK_WIDGET (gizmo);
   GtkLevelBar *self = GTK_LEVEL_BAR (gtk_widget_get_parent (widget));
-  gint num_blocks, size;
-  gint block_width, block_height;
+  int num_blocks, size;
+  int block_width, block_height;
 
   num_blocks = gtk_level_bar_get_num_blocks (self);
   gtk_level_bar_get_min_block_size (self, &block_width, &block_height);
@@ -464,8 +464,8 @@ gtk_level_bar_allocate_trough_discrete (GtkLevelBar *self,
                                         int          baseline)
 {
   GtkAllocation block_area;
-  gint num_blocks, i;
-  gint block_width, block_height;
+  int num_blocks, i;
+  int block_width, block_height;
 
   gtk_level_bar_get_min_block_size (self, &block_width, &block_height);
   num_blocks = gtk_level_bar_get_num_blocks (self);
@@ -573,7 +573,7 @@ update_level_style_classes (GtkLevelBar *self)
   const gchar *value_class = NULL;
   GtkLevelBarOffset *offset, *prev_offset;
   GList *l;
-  gint num_filled, num_blocks, i;
+  int num_filled, num_blocks, i;
   gboolean inverted;
 
   value = gtk_level_bar_get_value (self);
@@ -883,7 +883,7 @@ static void
 gtk_level_bar_finalize (GObject *obj)
 {
   GtkLevelBar *self = GTK_LEVEL_BAR (obj);
-  gint i;
+  int i;
 
   g_list_free_full (self->offsets, (GDestroyNotify) gtk_level_bar_offset_free);
 

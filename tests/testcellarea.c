@@ -466,7 +466,7 @@ cell_spacing_changed (GtkSpinButton    *spin_button,
 		      GtkIconView *iconview)
 {
   GtkCellArea *area = gtk_cell_layout_get_area (GTK_CELL_LAYOUT (iconview));
-  gint        value;
+  int         value;
 
   value = (gint)gtk_spin_button_get_value (spin_button);
 
@@ -477,7 +477,7 @@ static void
 row_spacing_changed (GtkSpinButton    *spin_button,
 		     GtkIconView *iconview)
 {
-  gint value;
+  int value;
 
   value = (gint)gtk_spin_button_get_value (spin_button);
 
@@ -488,7 +488,7 @@ static void
 item_padding_changed (GtkSpinButton    *spin_button,
 		     GtkIconView *iconview)
 {
-  gint value;
+  int value;
 
   value = (gint)gtk_spin_button_get_value (spin_button);
 

@@ -4644,7 +4644,7 @@ specific_append_after_collapse_visible_func (GtkTreeModel *model,
                                              GtkTreeIter  *iter,
                                              gpointer      data)
 {
-  gint number;
+  int number;
   gboolean hide_negative_numbers;
 
   gtk_tree_model_get (model, iter, 1, &number, -1);

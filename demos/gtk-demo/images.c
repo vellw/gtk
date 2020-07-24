@@ -43,10 +43,10 @@ progressive_prepared_callback (GdkPixbufLoader *loader,
 
 static void
 progressive_updated_callback (GdkPixbufLoader *loader,
-                              gint                 x,
-                              gint                 y,
-                              gint                 width,
-                              gint                 height,
+                              int                  x,
+                              int                  y,
+                              int                  width,
+                              int                  height,
                               gpointer     data)
 {
   GtkWidget *picture;

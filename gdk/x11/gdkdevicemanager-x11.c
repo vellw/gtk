@@ -76,7 +76,7 @@ _gdk_x11_device_manager_new (GdkDisplay *display)
  **/
 GdkDevice *
 gdk_x11_device_manager_lookup (GdkX11DeviceManagerXI2 *device_manager,
-			       gint                    device_id)
+			       int                     device_id)
 {
   g_return_val_if_fail (GDK_IS_X11_DEVICE_MANAGER_XI2 (device_manager), NULL);
 

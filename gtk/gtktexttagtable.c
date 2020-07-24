@@ -87,7 +87,7 @@ struct _GtkTextTagTablePrivate
   GSList     *anonymous;
   GSList     *buffers;
 
-  gint anon_count;
+  int anon_count;
 
   guint seen_invisible : 1;
 };

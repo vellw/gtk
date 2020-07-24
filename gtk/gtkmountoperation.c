@@ -338,7 +338,7 @@ remember_button_toggled (GtkToggleButton   *button,
 
 static void
 pw_dialog_got_response (GtkDialog         *dialog,
-                        gint               response_id,
+                        int                response_id,
                         GtkMountOperation *mount_op)
 {
   GtkMountOperationPrivate *priv = mount_op->priv;
@@ -910,7 +910,7 @@ gtk_mount_operation_ask_password (GMountOperation   *mount_op,
 
 static void
 question_dialog_button_clicked (GtkDialog       *dialog,
-                                gint             button_number,
+                                int              button_number,
                                 GMountOperation *op)
 {
   GtkMountOperationPrivate *priv;
@@ -1065,7 +1065,7 @@ gtk_mount_operation_ask_question (GMountOperation *op,
 
 static void
 show_processes_button_clicked (GtkDialog       *dialog,
-                               gint             button_number,
+                               int              button_number,
                                GMountOperation *op)
 {
   GtkMountOperationPrivate *priv;
@@ -1107,7 +1107,7 @@ diff_sorted_arrays (GArray         *array1,
                     GArray         *added_indices,
                     GArray         *removed_indices)
 {
-  gint order;
+  int order;
   guint n1, n2;
   guint elem_size;
 

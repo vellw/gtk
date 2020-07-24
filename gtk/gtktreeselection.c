@@ -82,9 +82,9 @@ struct _GtkTreeSelectionClass
 };
 
 static void gtk_tree_selection_finalize          (GObject               *object);
-static gint gtk_tree_selection_real_select_all   (GtkTreeSelection      *selection);
-static gint gtk_tree_selection_real_unselect_all (GtkTreeSelection      *selection);
-static gint gtk_tree_selection_real_select_node  (GtkTreeSelection      *selection,
+static int gtk_tree_selection_real_select_all   (GtkTreeSelection      *selection);
+static int gtk_tree_selection_real_unselect_all (GtkTreeSelection      *selection);
+static int gtk_tree_selection_real_select_node  (GtkTreeSelection      *selection,
 						  GtkTreeRBTree         *tree,
 						  GtkTreeRBNode         *node,
 						  gboolean               select);
@@ -318,7 +318,7 @@ gtk_tree_selection_set_mode (GtkTreeSelection *selection,
     {
       GtkTreeRBTree *tree = NULL;
       GtkTreeRBNode *node = NULL;
-      gint selected = FALSE;
+      int selected = FALSE;
       GtkTreePath *anchor_path = NULL;
 
       anchor_path = _gtk_tree_view_get_anchor_path (selection->tree_view);
@@ -634,7 +634,7 @@ gtk_tree_selection_count_selected_rows_helper (GtkTreeRBTree *tree,
                                                GtkTreeRBNode *node,
                                                gpointer       data)
 {
-  gint *count = (gint *)data;
+  int *count = (int *)data;
 
   g_return_if_fail (node != NULL);
 
@@ -658,7 +658,7 @@ gtk_tree_selection_count_selected_rows_helper (GtkTreeRBTree *tree,
 gint
 gtk_tree_selection_count_selected_rows (GtkTreeSelection *selection)
 {
-  gint count = 0;
+  int count = 0;
   GtkTreeRBTree *tree;
 
   g_return_val_if_fail (GTK_IS_TREE_SELECTION (selection), 0);
@@ -1044,7 +1044,7 @@ gtk_tree_selection_iter_is_selected (GtkTreeSelection *selection,
 /* Wish I was in python, right now... */
 struct _TempTuple {
   GtkTreeSelection *selection;
-  gint dirty;
+  int dirty;
 };
 
 static void
@@ -1232,7 +1232,7 @@ enum
 
 static gint
 gtk_tree_selection_real_modify_range (GtkTreeSelection *selection,
-                                      gint              mode,
+                                      int               mode,
 				      GtkTreePath      *start_path,
 				      GtkTreePath      *end_path)
 {
@@ -1412,8 +1412,8 @@ _gtk_tree_selection_internal_select_node (GtkTreeSelection *selection,
                                           GtkTreeSelectMode mode,
                                           gboolean          override_browse_mode)
 {
-  gint flags;
-  gint dirty = FALSE;
+  int flags;
+  int dirty = FALSE;
   GtkTreePath *anchor_path = NULL;
 
   if (selection->type == GTK_SELECTION_NONE)

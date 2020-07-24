@@ -350,7 +350,7 @@ filechooser_win32_thread_done (gpointer _data)
   for (l = self->choices; l; l = l->next)
     {
       GtkFileChooserNativeChoice *choice = (GtkFileChooserNativeChoice*) l->data;
-      gint sel = g_array_index (data->choices_selections, gint,
+      int sel = g_array_index (data->choices_selections, gint,
                                 g_slist_position (self->choices, l));
 
       if (sel >= 0)
@@ -767,7 +767,7 @@ filechooser_win32_thread (gpointer _data)
             {
               GtkFileChooserNativeChoice *choice = (GtkFileChooserNativeChoice*) l->data;
               DWORD dialog_item_id = (DWORD) g_slist_position (data->self->choices, l);
-              gint val = -1;
+              int val = -1;
 
               if (choice->options)
                 {

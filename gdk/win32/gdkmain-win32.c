@@ -185,7 +185,7 @@ void
 _gdk_win32_print_hpalette (HPALETTE hpal)
 {
   PALETTEENTRY *pe;
-  gint n, npal;
+  int n, npal;
 
   npal = palette_size (hpal);
   pe = g_new (PALETTEENTRY, npal);

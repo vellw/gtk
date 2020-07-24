@@ -37,7 +37,7 @@ static gint
 gtk_menu_button_accessible_get_n_children (AtkObject* obj)
 {
   GtkWidget *widget;
-  gint count = 0;
+  int count = 0;
 
   widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (obj));
   if (widget == NULL)
@@ -48,7 +48,7 @@ gtk_menu_button_accessible_get_n_children (AtkObject* obj)
 
 static AtkObject *
 gtk_menu_button_accessible_ref_child (AtkObject *obj,
-                                      gint       i)
+                                      int        i)
 {
   AtkObject *accessible = NULL;
   GtkWidget *widget;

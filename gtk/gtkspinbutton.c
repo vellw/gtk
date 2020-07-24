@@ -222,9 +222,9 @@ struct _GtkSpinButtonClass
 {
   GtkWidgetClass parent_class;
 
-  gint (*input)  (GtkSpinButton *spin_button,
+  int (*input)  (GtkSpinButton *spin_button,
                   gdouble       *new_value);
-  gint (*output) (GtkSpinButton *spin_button);
+  int (*output) (GtkSpinButton *spin_button);
   void (*value_changed) (GtkSpinButton *spin_button);
 
   /* Action signals for keybindings, do not connect to these */
@@ -289,14 +289,14 @@ static void gtk_spin_button_snap           (GtkSpinButton      *spin_button,
                                             gdouble             val);
 static void gtk_spin_button_insert_text    (GtkEditable        *editable,
                                             const gchar        *new_text,
-                                            gint                new_text_length,
-                                            gint               *position);
+                                            int                 new_text_length,
+                                            int                *position);
 static void gtk_spin_button_real_spin      (GtkSpinButton      *spin_button,
                                             gdouble             step);
 static void gtk_spin_button_real_change_value (GtkSpinButton   *spin,
                                                GtkScrollType    scroll);
 
-static gint gtk_spin_button_default_input  (GtkSpinButton      *spin_button,
+static int gtk_spin_button_default_input  (GtkSpinButton      *spin_button,
                                             gdouble            *new_val);
 static void gtk_spin_button_default_output (GtkSpinButton      *spin_button);
 
@@ -1133,7 +1133,7 @@ gtk_spin_button_set_orientation (GtkSpinButton  *spin,
 
 static gchar *
 weed_out_neg_zero (gchar *str,
-                   gint   digits)
+                   int    digits)
 {
   if (str[0] == '-')
     {
@@ -1391,8 +1391,8 @@ gtk_spin_button_activate (GtkText *entry,
 static void
 gtk_spin_button_insert_text (GtkEditable *editable,
                              const gchar *new_text,
-                             gint         new_text_length,
-                             gint        *position)
+                             int          new_text_length,
+                             int         *position)
 {
   GtkSpinButton *spin = GTK_SPIN_BUTTON (editable);
 
@@ -1400,11 +1400,11 @@ gtk_spin_button_insert_text (GtkEditable *editable,
     {
       struct lconv *lc;
       gboolean sign;
-      gint dotpos = -1;
-      gint i;
+      int dotpos = -1;
+      int i;
       guint32 pos_sign;
       guint32 neg_sign;
-      gint entry_length;
+      int entry_length;
       const gchar *entry_text;
 
       entry_text = gtk_editable_get_text (GTK_EDITABLE (spin->entry));
@@ -1687,7 +1687,7 @@ gtk_spin_button_new_with_range (gdouble min,
 {
   GtkAdjustment *adjustment;
   GtkSpinButton *spin;
-  gint digits;
+  int digits;
 
   g_return_val_if_fail (min <= max, NULL);
   g_return_val_if_fail (step != 0.0, NULL);
@@ -1945,7 +1945,7 @@ gtk_spin_button_set_value (GtkSpinButton *spin_button,
     gtk_adjustment_set_value (spin_button->adjustment, value);
   else
     {
-      gint return_val = FALSE;
+      int return_val = FALSE;
       g_signal_emit (spin_button, spinbutton_signals[OUTPUT], 0, &return_val);
       if (!return_val)
         gtk_spin_button_default_output (spin_button);
@@ -2209,8 +2209,8 @@ void
 gtk_spin_button_update (GtkSpinButton *spin_button)
 {
   gdouble val;
-  gint error = 0;
-  gint return_val;
+  int error = 0;
+  int return_val;
 
   g_return_if_fail (GTK_IS_SPIN_BUTTON (spin_button));
 

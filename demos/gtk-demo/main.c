@@ -387,11 +387,11 @@ static const char *control[] =
 void
 parse_chars (gchar       *text,
              gchar      **end_ptr,
-             gint        *state,
+             int         *state,
              const char **tag,
              gboolean     start)
 {
-  gint i;
+  int i;
   gchar *next_token;
 
   /* Handle comments first */
@@ -462,7 +462,7 @@ parse_chars (gchar       *text,
   /* check for string */
   if (text[0] == '"')
     {
-      gint maybe_escape = FALSE;
+      int maybe_escape = FALSE;
 
       *end_ptr = text + 1;
       *tag = "string";
@@ -525,7 +525,7 @@ void
 fontify (GtkTextBuffer *source_buffer)
 {
   GtkTextIter start_iter, next_iter, tmp_iter;
-  gint state;
+  int state;
   gchar *text;
   gchar *start_ptr, *end_ptr;
   const char *tag;
@@ -742,7 +742,7 @@ add_data_tab (const gchar *demoname)
 static void
 remove_data_tabs (void)
 {
-  gint i;
+  int i;
 
   for (i = gtk_notebook_get_n_pages (GTK_NOTEBOOK (notebook)) - 1; i > 1; i--)
     gtk_notebook_remove_page (GTK_NOTEBOOK (notebook), i);
@@ -760,7 +760,7 @@ load_file (const gchar *demoname,
   gboolean in_para = 0;
   gchar **lines;
   GBytes *bytes;
-  gint i;
+  int i;
 
   if (!g_strcmp0 (current_file, filename))
     return;

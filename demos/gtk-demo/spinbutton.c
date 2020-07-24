@@ -55,8 +55,8 @@ spinbutton_time_spin_input (GtkSpinButton *spin_button,
   const gchar *text;
   gchar **str;
   gboolean found = FALSE;
-  gint hours;
-  gint minutes;
+  int hours;
+  int minutes;
   gchar *endh;
   gchar *endm;
 
@@ -125,7 +125,7 @@ gint
 spinbutton_month_spin_input (GtkSpinButton *spin_button,
                              gdouble       *new_val)
 {
-  gint i;
+  int i;
   gchar *tmp1, *tmp2;
   gboolean found = FALSE;
 
@@ -155,7 +155,7 @@ spinbutton_month_spin_output (GtkSpinButton *spin_button)
 {
   GtkAdjustment *adjustment;
   gdouble value;
-  gint i;
+  int i;
 
   adjustment = gtk_spin_button_get_adjustment (spin_button);
   value = gtk_adjustment_get_value (adjustment);

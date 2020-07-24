@@ -145,7 +145,7 @@ gtk_sort_list_model_get_item (GListModel *list,
 {
   GtkSortListModel *self = GTK_SORT_LIST_MODEL (list);
 
-  if (self->model == NULL)
+  if (position >= self->n_items)
     return NULL;
 
   if (self->positions)

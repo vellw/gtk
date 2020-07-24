@@ -529,7 +529,7 @@ populate_servers (GtkPlacesView *view)
   GtkWidget *child;
   gchar **uris;
   gsize num_uris;
-  gint i;
+  int i;
 
   server_list = server_list_load (view);
 
@@ -2078,7 +2078,7 @@ listbox_sort_func (GtkListBoxRow *row1,
   gchar *path2;
   gboolean *is_placeholder1;
   gboolean *is_placeholder2;
-  gint retval;
+  int retval;
 
   row1_is_network = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (row1), "is-network"));
   row2_is_network = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (row2), "is-network"));

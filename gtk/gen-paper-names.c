@@ -23,18 +23,18 @@
 
 #include "paper_names.c"
 
-static const gint n_infos = G_N_ELEMENTS (standard_names);
-static const gint n_extra = G_N_ELEMENTS (extra_ppd_names);
+static const int n_infos = G_N_ELEMENTS (standard_names);
+static const int n_extra = G_N_ELEMENTS (extra_ppd_names);
 
 typedef struct {
   const gchar *s;
-  gint         len;
-  gint         suffix;
-  gint         offset;
+  int          len;
+  int          suffix;
+  int          offset;
 } NameInfo;
 
 static NameInfo *names = NULL;
-static gint n_names = 0;
+static int n_names = 0;
 
 static void
 add_name (const gchar *name)
@@ -50,7 +50,7 @@ add_name (const gchar *name)
 static gint
 find_name (const gchar *name)
 {
-  gint i;
+  int i;
 
   if (!name)
     return -1;
@@ -113,7 +113,7 @@ parse_media_size (const gchar *size,
 int 
 main (int argc, char *argv[])
 {
-  gint i, j, offset;
+  int i, j, offset;
   gdouble width, height;
 
   names = (NameInfo *) malloc (sizeof (NameInfo) * (4 + n_infos + 2 * n_extra));

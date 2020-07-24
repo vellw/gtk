@@ -124,15 +124,15 @@ swap_rows (GtkWidget *button, GtkIconView *icon_list)
 }
 
 static void
-add_n_items (GtkIconView *icon_list, gint n)
+add_n_items (GtkIconView *icon_list, int n)
 {
-  static gint count = NUMBER_OF_ITEMS;
+  static int count = NUMBER_OF_ITEMS;
 
   GtkTreeIter iter;
   GtkListStore *store;
   GdkPixbuf *pixbuf;
   gchar *str, *str2;
-  gint i;
+  int i;
 
   store = GTK_LIST_STORE (gtk_icon_view_get_model (icon_list));
   pixbuf = gdk_pixbuf_new_from_file ("gnome-textfile.png", NULL);
@@ -391,7 +391,7 @@ popup_menu_handler (GtkWidget *widget)
 }
 
 gint
-main (gint argc, gchar **argv)
+main (int argc, gchar **argv)
 {
   GtkWidget *paned, *tv;
   GtkWidget *window, *icon_list, *scrolled_window;

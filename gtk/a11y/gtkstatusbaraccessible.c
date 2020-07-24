@@ -77,7 +77,7 @@ gtk_statusbar_accessible_get_n_children (AtkObject *obj)
 
 static AtkObject*
 gtk_statusbar_accessible_ref_child (AtkObject *obj,
-                                    gint       i)
+                                    int        i)
 {
   return NULL;
 }

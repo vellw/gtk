@@ -541,10 +541,10 @@ _gdk_macos_surface_new (GdkMacosDisplay   *display,
 
 void
 _gdk_macos_surface_get_shadow (GdkMacosSurface *self,
-                               gint            *top,
-                               gint            *right,
-                               gint            *bottom,
-                               gint            *left)
+                               int             *top,
+                               int             *right,
+                               int             *bottom,
+                               int             *left)
 {
 
   g_return_if_fail (GDK_IS_MACOS_SURFACE (self));

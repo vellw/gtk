@@ -108,7 +108,7 @@ static gboolean
 progress_timeout (GtkWidget *assistant)
 {
   GtkWidget *progress;
-  gint current_page;
+  int current_page;
   gdouble value;
 
   current_page = gtk_assistant_get_current_page (GTK_ASSISTANT (assistant));
@@ -324,7 +324,7 @@ select_branch (GtkWidget *widget, gchar branch)
 }
 
 static gint
-nonlinear_assistant_forward_page (gint current_page, gpointer data)
+nonlinear_assistant_forward_page (int current_page, gpointer data)
 {
   switch (current_page)
     {
@@ -409,7 +409,7 @@ create_nonlinear_assistant (GtkWidget *widget)
 }
 
 static gint
-looping_assistant_forward_page (gint current_page, gpointer data)
+looping_assistant_forward_page (int current_page, gpointer data)
 {
   switch (current_page)
     {
@@ -680,7 +680,7 @@ int
 main (int argc, gchar *argv[])
 {
   GtkWidget *window, *box, *button;
-  gint i;
+  int i;
   gboolean done = FALSE;
 
   gtk_init ();

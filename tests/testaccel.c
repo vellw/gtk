@@ -63,7 +63,7 @@ key_test (void)
   GtkListStore *store;
   GtkTreeViewColumn *column;
   GtkCellRenderer *rend;
-  gint i;
+  int i;
   GtkWidget *box, *entry;
 
   /* create window */
@@ -117,7 +117,7 @@ key_test (void)
 }
 
 gint
-main (gint argc, gchar **argv)
+main (int argc, gchar **argv)
 {
   GtkWidget *dialog;
   

@@ -89,8 +89,8 @@ typedef struct
   GdkSeat *grab_seat;
 
   GtkInspectorOverlay *flash_overlay;
-  gint flash_count;
-  gint flash_cnx;
+  int flash_count;
+  int flash_cnx;
 
   GArray *objects;
 

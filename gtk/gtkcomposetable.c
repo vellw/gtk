@@ -830,8 +830,8 @@ gtk_compose_table_new_with_file (const gchar *compose_file)
 GSList *
 gtk_compose_table_list_add_array (GSList        *compose_tables,
                                   const guint16 *data,
-                                  gint           max_seq_len,
-                                  gint           n_seqs)
+                                  int            max_seq_len,
+                                  int            n_seqs)
 {
   guint32 hash;
   GtkComposeTable *compose_table;

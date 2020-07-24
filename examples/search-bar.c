@@ -33,7 +33,7 @@ activate_cb (GtkApplication *app,
 }
 
 gint
-main (gint argc,
+main (int argc,
     gchar *argv[])
 {
   GtkApplication *app;

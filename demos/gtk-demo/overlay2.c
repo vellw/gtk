@@ -12,7 +12,7 @@ static void
 margin_changed (GtkAdjustment *adjustment,
                 GtkTextView   *text)
 {
-  gint value;
+  int value;
 
   value = (gint)gtk_adjustment_get_value (adjustment);
   gtk_text_view_set_left_margin (GTK_TEXT_VIEW (text), value);

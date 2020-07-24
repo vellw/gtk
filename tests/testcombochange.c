@@ -115,8 +115,8 @@ static void
 on_reorder (void)
 {
   GArray *new_contents;
-  gint *shuffle_array;
-  gint i;
+  int *shuffle_array;
+  int i;
 
   shuffle_array = g_new (int, contents->len);
   
@@ -125,8 +125,8 @@ on_reorder (void)
 
   for (i = 0; i + 1 < contents->len; i++)
     {
-      gint pos = g_random_int_range (i, contents->len);
-      gint tmp;
+      int pos = g_random_int_range (i, contents->len);
+      int tmp;
 
       tmp = shuffle_array[i];
       shuffle_array[i] = shuffle_array[pos];

@@ -1117,7 +1117,7 @@ set_font_desc_fields (PangoFontDescription *desc,
     pango_font_description_set_stretch (desc, pango_font_description_get_stretch (desc));
   if (to_set & PANGO_FONT_MASK_SIZE)
     {
-      gint size = pango_font_description_get_size (desc);
+      int size = pango_font_description_get_size (desc);
       if (size <= 0)
 	{
 	  size = 10 * PANGO_SCALE;
@@ -2112,9 +2112,9 @@ gtk_text_tag_get_property (GObject      *object,
  */
 
 typedef struct {
-  gint high;
-  gint low;
-  gint delta;
+  int high;
+  int low;
+  int delta;
 } DeltaData;
 
 static void
@@ -2162,7 +2162,7 @@ gtk_text_tag_get_priority (GtkTextTag *tag)
  **/
 void
 gtk_text_tag_set_priority (GtkTextTag *tag,
-                           gint        priority)
+                           int         priority)
 {
   GtkTextTagPrivate *priv;
   DeltaData dd;

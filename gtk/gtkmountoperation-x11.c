@@ -535,8 +535,8 @@ _gtk_mount_operation_lookup_context_get (GdkDisplay *display)
 {
   GtkMountOperationLookupContext *context;
   Window *mapping;
-  gint mapping_length;
-  gint n;
+  int mapping_length;
+  int n;
 
   context = g_new0 (GtkMountOperationLookupContext, 1);
 
@@ -554,7 +554,7 @@ _gtk_mount_operation_lookup_context_get (GdkDisplay *display)
                    &mapping_length);
   for (n = 0; n < mapping_length; n++)
     {
-      gint pid;
+      int pid;
 
       if (!get_cardinal (context->display,
                          GDK_DISPLAY_XDISPLAY (context->display),
@@ -928,7 +928,7 @@ get_name_for_window_with_pid (GtkMountOperationLookupContext *context,
 static GdkTexture *
 get_texture_for_window_with_pid (GtkMountOperationLookupContext *context,
                                  GPid                            pid,
-                                 gint                            size_pixels)
+                                 int                             size_pixels)
 {
   Window window;
   GdkTexture *ret;
@@ -954,8 +954,8 @@ get_texture_for_window_with_pid (GtkMountOperationLookupContext *context,
 
   if (window != None)
     {
-      gint    width;
-      gint    height;
+      int     width;
+      int     height;
       guchar *pixdata;
 
       if (read_rgb_icon (context->display,
@@ -992,7 +992,7 @@ static const gchar *well_known_commands[] =
 gboolean
 _gtk_mount_operation_lookup_info (GtkMountOperationLookupContext *context,
                                   GPid                            pid,
-                                  gint                            size_pixels,
+                                  int                             size_pixels,
                                   gchar                         **out_name,
                                   gchar                         **out_command_line,
                                   GdkTexture                    **out_texture)

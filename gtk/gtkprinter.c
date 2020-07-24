@@ -66,7 +66,7 @@ struct _GtkPrinterPrivate
   guint accepts_ps        : 1;
 
   gchar *state_message;
-  gint job_count;
+  int job_count;
 
   GtkPrintBackend *backend;
 };
@@ -575,7 +575,7 @@ gtk_printer_set_icon_name (GtkPrinter  *printer,
  * 
  * Returns: the number of jobs on @printer
  */
-gint 
+int 
 gtk_printer_get_job_count (GtkPrinter *printer)
 {
   GtkPrinterPrivate *priv = gtk_printer_get_instance_private (printer);
@@ -587,7 +587,7 @@ gtk_printer_get_job_count (GtkPrinter *printer)
 
 gboolean
 gtk_printer_set_job_count (GtkPrinter *printer,
-			   gint        count)
+			   int         count)
 {
   GtkPrinterPrivate *priv = gtk_printer_get_instance_private (printer);
 
